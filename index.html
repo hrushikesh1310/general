@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git Commands Cheat Sheet</title>
+    <meta
+      name="description"
+      content="A searchable Git commands cheat sheet with syntax and examples."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <div>
+          <h1>Git Commands Cheat Sheet</h1>
+          <p class="subtitle">
+            Search and filter common Git commands with syntax + examples.
+          </p>
+        </div>
+        <div class="header__meta">
+          <span class="pill" id="resultsCount">0 commands</span>
+          <a
+            class="pill pill--link"
+            href="https://git-scm.com/docs"
+            target="_blank"
+            rel="noreferrer"
+            >Official docs</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="controls" aria-label="Search and filters">
+        <label class="search" for="searchInput">
+          <span class="search__icon" aria-hidden="true">⌕</span>
+          <input
+            id="searchInput"
+            type="search"
+            autocomplete="off"
+            placeholder="Search commands (e.g., commit, rebase, --amend, origin, HEAD~1)"
+          />
+        </label>
+
+        <div class="chips" id="categoryChips" aria-label="Category filters"></div>
+      </section>
+
+      <section class="hint" id="activeFilters" aria-live="polite"></section>
+
+      <section>
+        <div class="grid" id="cards"></div>
+        <div class="empty" id="emptyState" hidden>
+          <h2>No matching commands</h2>
+          <p>Try a different search term or switch the category to <b>All</b>.</p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <p>
+            Tip: many older tutorials still use
+            <code>git checkout</code>. Newer workflows often prefer
+            <code>git switch</code> (branches) and <code>git restore</code>
+            (files).
+          </p>
+          <p class="footer__small">
+            Built locally — open this file directly in your browser.
+          </p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
